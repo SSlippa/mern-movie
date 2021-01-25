@@ -1,0 +1,46 @@
+.dashboard-wrapper {
+    background-color: #f6f7fb;
+    border: 1px solid #edeef0;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-wrapper .charts-line {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dashboard-wrapper .messages-wrapper {
+    display: flex;
+    overflow: hidden;
+}
+
+.chart-wrapper {
+    padding: 15px 0;
+    min-width: 400px;
+    flex: 1;
+}
+
+.chart {
+    height: 250px;
+}
+
+@media (max-width: 400px) {
+    .dashboard-wrapper {
+        overflow: auto;
+    }
+
+    .dashboard-wrapper .messages-wrapper {
+        overflow: unset;
+    }
+
+    .chart-wrapper {
+        min-width: 80%;
+    }
+
+    .chart {
+        height: 150px;
+    }
+}

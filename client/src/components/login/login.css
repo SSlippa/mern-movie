@@ -1,0 +1,19 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-submit {
+    margin-top: 10px;
+}
+
+
+@media all and (min-width: 480px) {
+    .login {
+        padding: 60px 0;
+    }
+    .login form {
+        margin: 0 auto;
+        max-width: 320px;
+    }
+}

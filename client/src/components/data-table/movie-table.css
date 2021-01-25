@@ -1,0 +1,15 @@
+.datatable .table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.datatable .confirmation-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p-dialog-content {
+    overflow: unset;
+}
