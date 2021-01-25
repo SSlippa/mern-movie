@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
@@ -16,10 +16,10 @@ import "./movie-table.css";
 import MovieService, { Movie } from "./movie-service";
 
 interface IMovieTableProps {
-  votedM: string[]
+  votedMo: string[]
 }
 
-const MovieTable: FC = ({votedM} : IMovieTableProps) => {
+const MovieTable: FC<IMovieTableProps> = ({votedMo}) => {
   let emptyMovie = {
     id: "",
     name: "",
@@ -39,7 +39,7 @@ const MovieTable: FC = ({votedM} : IMovieTableProps) => {
   const [selectedMovies, setSelectedMovies] = useState<Movie[]>([]);
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [globalFilter, setGlobalFilter] = useState<string>("");
-  const [votedMovies, setVotedMovies] = useState<string[]>(votedM)
+  const [votedMovies, setVotedMovies] = useState<string[]>(votedMo)
   const toast = useRef<Toast>(null);
   const movieService = new MovieService();
 
@@ -177,8 +177,8 @@ const MovieTable: FC = ({votedM} : IMovieTableProps) => {
   const leftToolbarTemplate = () => {
     return (
       <>
-        <Button label="New" icon="pi pi-plus" className="p-button-success p-mr-2" onClick={openNew} />
-        <Button label="Delete" icon="pi pi-trash" className="p-button-danger" onClick={confirmDeleteSelected}
+        <Button label="New" icon="pi pi-plus" className="p-button-success p-mr-2 ctrl-btn" onClick={openNew} />
+        <Button label="Delete" icon="pi pi-trash" className="p-button-danger ctrl-btn" onClick={confirmDeleteSelected}
                 disabled={!selectedMovies?.length} />
       </>
     );
@@ -204,7 +204,7 @@ const MovieTable: FC = ({votedM} : IMovieTableProps) => {
   const actionBodyTemplate = (rowData: Movie) => {
     return (
       <>
-        <Button icon="pi pi-pencil" className="p-button-rounded p-button-success p-mr-2"
+        <Button icon="pi pi-pencil" className="p-button-rounded p-button-success p-mr-2 ctrl-btn"
                 onClick={() => editMovie(rowData)} />
         <Button icon="pi pi-trash" className="p-button-rounded p-button-warning"
                 onClick={() => confirmDeleteMovie(rowData)} />

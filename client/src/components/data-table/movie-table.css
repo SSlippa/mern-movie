@@ -13,3 +13,7 @@
 .p-dialog-content {
     overflow: unset;
 }
+
+.ctrl-btn {
+    margin-right: 10px;
+}

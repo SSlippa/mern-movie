@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import "./App.css";
 import Login from "./components/login/login";
 import Dashboard from "./components/dashboard/dashboard";

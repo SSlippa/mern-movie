@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import './dashboard.css'
 import MovieTable from "../data-table/movie-table";
 
@@ -6,10 +6,10 @@ interface IDashboardProps {
   votedM: string[]
 }
 
-const Dashboard = ({votedM}: IDashboardProps) => {
+const Dashboard: FC<IDashboardProps> = ({ votedM }) => {
      return (
         <div className='dashboard-wrapper'>
-            <MovieTable votedM={votedM}/>
+            <MovieTable votedMo={votedM}/>
         </div>
     )
 }
